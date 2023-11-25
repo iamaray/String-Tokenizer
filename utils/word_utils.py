@@ -178,17 +178,3 @@ def createSubVocabulary(wordCountDict: defaultdict, minFrequency: int, overallVo
     subVocabulary = Vocabulary(subVocabulary)
 
     return subVocabulary
-
-
-exText = "Hello, my name is bob. I can't walk & I cannot read. What is your name? Where don't you work? I work at\
-            AT&T. My phone number is (+1)404-483-9833."
-
-wordList = removePunctuation(exText)
-wordOccurences = countWordOccurrences(wordList)
-subVocab = createSubVocabulary(wordOccurences, 2, Vocabulary(["help"]))
-print(subVocab)
-print(type(subVocab))
-
-overalVocab = Vocabulary(["Hello", "there", "how", "are", "you"])
-overalVocab.mergeSubVocabulary(subVocab)
-print(overalVocab)
